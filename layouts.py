@@ -25,5 +25,9 @@ layouts = [
         layout.MonadWide(**common_layout_settings),
         layout.Matrix(**common_layout_settings),
         layout.Bsp(**common_layout_settings),
+        layout.Floating(border_focus = colors[17][0],
+                        border_normal = colors[13][0],
+                        border_width = 2,
+                        fullscreen_border_width = 2)
         ]
                          

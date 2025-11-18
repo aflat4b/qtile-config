@@ -47,8 +47,8 @@ keys = [
         Key([], "XF86AudioMute", lazy.spawn("amixer sset 'Master' toggle")),
 
         # Making the focusing window float
-        Key([mod], "space", lazy.layout.toggle_floating()),
-        Key([mod], "f", lazy.layout.toggle_fullscreen()),
+        Key([mod], "space", lazy.window.toggle_floating()),
+        Key([mod], "f", lazy.window.toggle_fullscreen()),
 
         # Reloading qtile config
         Key([mod, "shift"], "r", lazy.restart()),
