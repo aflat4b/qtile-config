@@ -9,7 +9,7 @@ from bars import my_bar
 
 # This file contains my screen configuration
 
-my_screen = Screen(top = my_bar),
+my_screen = Screen(top = my_bar)
 screens = [my_screen]
 
                          

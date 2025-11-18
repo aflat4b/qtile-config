@@ -19,7 +19,7 @@ mod = "mod4"
 alt = "mod1"
 
 # Alias for dmenu command
-dmenu = "dmenu_run -fn 'Mononoki Nerd Font:pixelsize=16' -nb #24273a3 -nf #a6da95 -sb #a6da95 -sf #24273a -p 'EXEC:'"
+dmenu = "dmenu_run -fn 'Mononoki Nerd Font:pixelsize=16' -nb #24273a -nf #a6da95 -sb #a6da95 -sf #24273a -p 'EXEC:'"
 
 # Alias for terminal
 terminal = "alacritty"
@@ -90,8 +90,8 @@ keys = [
 # Adding group switching keybindings
 
 for i in groups:
-    keys.append(Key([mod], i, lazy.group[i.name].toscreen()))
-    keys.append(Key([mod, "shift"], i, lazy.window.togroup(i.name, switch_group = True)))
+    keys.append(Key([mod], i.name, lazy.group[i.name].toscreen()))
+    keys.append(Key([mod, "shift"], i.name, lazy.window.togroup(i.name, switch_group = True)))
 
 mouse = [
         # Mouse bindings

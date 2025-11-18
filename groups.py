@@ -9,8 +9,12 @@ import re
 
 # This file contains the groups configuration
 
-# List of layouts names (will be displayed on the bar)
-group_names = ["", "󰈮", "", "󰎆", "", "󰭹", "", "󱌣", "󰊴"]
+# List of group names
+
+group_names = ["1", "2", "3", "4", "5", "6", "7", "8", "9"]
+
+# List of layouts labels (will be displayed on the bar)
+group_labels = ["", "󰈮", "", "󰎆", "", "󰭹", "", "󱌣", "󰊴"]
 
 # Default layouts for each group
 group_layouts = ["monadtall", "monadtall", "monadtall", "monadtall", "monadtall", "monadtall", "monadtall", "monadtall", "monadtall"]
@@ -35,6 +39,7 @@ groups = []
 for i in range(len(group_names)):
     groups.append(Group(name = group_names[i],
                         layout = group_layouts[i],
+                        label = group_labels[i],
                         matches = matches_matrix[i]))
 
 

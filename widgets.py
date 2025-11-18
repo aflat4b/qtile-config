@@ -25,6 +25,8 @@ my_widgets = [
             foreground = colors[11],
             active = colors[15],
             inactive = colors[8],
+            urgent_alert_method = 'text',
+            urgent_text = colors[21],
             this_current_screen_border = colors[18],
             ),
         widget.WindowName(
@@ -95,6 +97,8 @@ my_widgets = [
         widget.Backlight(
             **widget_defaults,
             format = '󰃝 {percent:2.0}%',
+            backlight_name = 'intel_backlight',
+            backlight_file = 'brightness',
             background = colors[0],
             foreground = colors[20],
             ),
