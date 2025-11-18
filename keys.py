@@ -61,6 +61,7 @@ keys = [
         Key([mod], "j", lazy.layout.down(), desc="Move focus down"),
         Key([mod], "k", lazy.layout.up(), desc="Move focus up"),
         Key([mod, "shift"], "n", lazy.layout.normalize(), desc = "Normalize layout"),
+        Key([mod, "control"], "space", lazy.next_layout()),
  
         # MonadTall and MonadWide specific
         Key([mod, "shift"], "h", lazy.layout.swap_left(), desc = "Move window to the left"),

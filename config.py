@@ -14,16 +14,18 @@ from screens import screens
 from bars import my_bar
 from widgets import widget_defaults, my_widgets
 from rules import dgroups_app_rules
+from colorschemes.catppuccin.catppuccin_macchiato import colors
 
 # This is the main entry of my qtile config
-
-
 
 dgroups_key_binder = None
 follow_mouse_focus = True
 bring_front_click = False
 cursor_warp = False
-floating_layout = layout.Floating()
+floating_layout = layout.Floating(border_focus = colors[17][0],
+                                  border_normal = colors[13][0],
+                                  border_width = 2,
+                                  fullscreen_border_width = 2)
 focus_on_window_activation = 'smart'
 wmname = 'qtile'
                          
