@@ -89,7 +89,7 @@ keys = [
 
 # Adding group switching keybindings
 
-for in in groups:
+for i in groups:
     keys.append(Key([mod], i, lazy.group[i.name].toscreen()))
     keys.append(Key([mod, "shift"], i, lazy.window.togroup(i.name, switch_group = True)))
 

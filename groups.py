@@ -4,7 +4,8 @@
 # / ___ \|  _| | (_| | |_ 
 #/_/   \_\_| |_|\__,_|\__|
 
-from libqtile.config import Group, Match, ScratchPad, Dropdown
+from libqtile.config import Group, Match, ScratchPad, DropDown
+import re
 
 # This file contains the groups configuration
 
@@ -16,15 +17,15 @@ group_layouts = ["monadtall", "monadtall", "monadtall", "monadtall", "monadtall"
 
 # Defining matches for each group
 
-matches_matrix = [[Match(wm_class = ["Brave-broswer", "brave-browser", "qbittorrent", "qBittorrent"])],
-                  [Match(wm_class = ["jetbrains-idea"])]
-                  [Match(wm_class = ["Alacritty", "Kitty", "xterm", "st"])],
-                  [Match(wm_class = ["deadbeef"])],
-                  [Match(wm_class = ["mpv", "vlc"])],
-                  [Match(wm_class = ["discord"])],
-                  [Match(wm_class = ["Zathura", "org.pwmt.zathura", "Calibre"])],
-                  [Match(wm_class = ["btrfs-assistant-bin", "Btrfs Assistant"])],
-                  [Match(wm_class = ["steam", "steamwebhelper", "minecraft-launcher"])]]
+matches_matrix = [[Match(wm_class = re.compile(r"^(Brave\-browser|brave\-broswer|qbittorrent|qBittorrent)$"))],
+                  [Match(wm_class = re.compile(r"^(jetbrains\-idea)$"))],
+                  [Match(wm_class = re.compile(r"^(Alacritty|Kitty|xterm|st)$"))],
+                  [Match(wm_class = re.compile(r"^(deadbeef)$"))],
+                  [Match(wm_class = re.compile(r"^(mpv|vlc)$"))],
+                  [Match(wm_class = re.compile(r"^(discord)$"))],
+                  [Match(wm_class = re.compile(r"^(Zathura|org.pwmt.zathura|Calibre)$"))],
+                  [Match(wm_class = re.compile(r"^(btrfs\-assistant\-bin|Btrfs\ Assistant)$"))],
+                  [Match(wm_class = re.compile(r"^(steam|steamwebhelper|minecraft\-launcher)$"))]]
 
 # Initialize the group list
 groups = []

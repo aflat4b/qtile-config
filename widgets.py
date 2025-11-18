@@ -4,10 +4,9 @@
 # / ___ \|  _| | (_| | |_ 
 #/_/   \_\_| |_|\__,_|\__|
 
-from libqtile import widget
+from libqtile import widget,bar
 
-import colorschemes.catppuccin.catppuccin_macchiato
-
+from colorschemes.catppuccin.catppuccin_macchiato import colors
 # This file contains the list of widgets I use
 
 widget_defaults = dict(
@@ -75,14 +74,14 @@ my_widgets = [
             discharging_char = '󰠠',
             empty_char = '',
             full_char = '',
-            background = color[0],
+            background = colors[0],
             foreground = colors[17],
             low_background = colors[0],
             low_foreground = colors[18],
             ),
         widget.Net(
             **widget_defaults,
-            format = '  {interface}: {down:6.2f}  {up:6.2f}'
+            format = '  {interface}: {down:6.2f}  {up:6.2f}',
             background = colors[0],
             foreground = colors[12],
             interface = 'wlp0s20f3',

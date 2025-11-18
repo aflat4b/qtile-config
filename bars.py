@@ -6,7 +6,7 @@
 
 from libqtile import bar
 from widgets import my_widgets, widget_defaults
-import colorscheme.catppuccin.catppuccin_macchiato
+from colorschemes.catppuccin.catppuccin_macchiato import colors
 
 # This file contains my bar configuration
 

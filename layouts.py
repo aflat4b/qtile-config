@@ -6,15 +6,15 @@
 
 from libqtile import layout
 
-import colorschemes.catppuccin.catppuccin_macchiato
+from colorschemes.catppuccin.catppuccin_macchiato import colors
 
 # This config contains the layouts configuration
 
 # Common settings for each layout I'm going to use
 common_layout_settings = dict(
-        border_focus = colors[17][0]
-        border_normal = colors[13][0]
-        border_width = 2
+        border_focus = colors[17][0],
+        border_normal = colors[13][0],
+        border_width = 2,
         margin = 4
         )
 

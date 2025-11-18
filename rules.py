@@ -37,5 +37,5 @@ dgroups_app_rules = [
             "arandr",
             "Arandr",
             "qt6ct"
-            ], float = True)
+            ]), float = True)
              ]
