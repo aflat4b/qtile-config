@@ -90,7 +90,7 @@ my_widgets = [
             ),
         widget.Clock(
             **widget_defaults,
-            format = '%d/%m%Y %H:%M:%S',
+            format = '%d/%m/%Y %H:%M:%S',
             background = colors[0],
             foreground = colors[14],
             ),
