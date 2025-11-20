@@ -22,7 +22,7 @@ from colorschemes.catppuccin.catppuccin_macchiato import colors
 @hook.subscribe.startup_once
 def autostart():
     script = os.path.expandusers("~/.config/autostart/autostart.sh")
-    subprocess.run(script)
+    subprocess.run([script])
 
 # Qtile variables
 dgroups_key_binder = None
