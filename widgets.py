@@ -31,7 +31,7 @@ my_widgets = [
             ),
         widget.WindowName(
             **widget_defaults,
-            max_chars = 80,
+            max_chars = 50,
             empty_group_string = 'Aflat\'s desktop',
             background = colors[0],
             foreground = colors[11],
@@ -41,19 +41,16 @@ my_widgets = [
             background = colors[0],
             foreground = colors[11],
             ),
-        widget.Spacer(
-            length = bar.STRETCH
-            ),
         widget.CPU(
             **widget_defaults,
-            format = '  {load_percent}%',
+            format = ' {load_percent}%',
             background = colors[0],
             foreground = colors[21],
             update_interval = 1.0
             ),
         widget.Memory(
             **widget_defaults,
-            format = '  {MemUsed: .0f}{mm}/{MemTotal: .0f}{mm}',
+            format = ' {MemUsed: .0f}{mm}/{MemTotal: .0f}{mm}',
             background = colors[0],
             foreground = colors[19],
             measure_mem = 'M',
@@ -61,7 +58,7 @@ my_widgets = [
             ),
         widget.ThermalSensor(
             **widget_defaults,
-            format = ' {temp: .1f} {unit}',
+            format = '{temp: .1f} {unit}',
             background = colors[0],
             foreground = colors[22],
             foreground_alert = colors[24],
@@ -88,6 +85,12 @@ my_widgets = [
             foreground = colors[12],
             interface = 'wlp0s20f3',
             ),
+        widget.TextBox(
+            **widget_defaults,
+            background = colors[0],
+            foreground = colors[14],
+            text = '󰥔'
+            ),
         widget.Clock(
             **widget_defaults,
             format = '%d/%m/%Y %H:%M:%S',
@@ -101,6 +104,15 @@ my_widgets = [
             backlight_file = 'brightness',
             background = colors[0],
             foreground = colors[20],
+            ),
+        widget.Volume(
+            **widget_defaults,
+            channel = 'Master',
+            background = colors[0],
+            foreground = colors[25],
+            fmt = ' :{}',
+            mute_format = 'M',
+            unmute_format = '{volume}%'
             ),
         widget.Systray(
             background = colors[0],
