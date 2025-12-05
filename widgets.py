@@ -4,6 +4,7 @@
 # / ___ \|  _| | (_| | |_ 
 #/_/   \_\_| |_|\__,_|\__|
 
+import os, subprocess
 from libqtile import widget,bar
 
 from colorschemes.catppuccin.catppuccin_macchiato import colors
@@ -14,6 +15,17 @@ widget_defaults = dict(
         fontsize = 16,
         padding = 5
         )
+
+# This is necessary if you have both igpu and dgpu
+brightness_defaults = dict(
+        **widget_defaults,
+        hide_crash = True,
+        format = '󰃝 {percent:2.0%}',
+        brightness_file = 'brightness',
+        foreground = colors[20],
+        background = colors[0]
+        )
+process = "test -d /sys/class/backlight/nvidia_wmi_ec_backlight"
 
 my_widgets = [
         widget.GroupBox(
@@ -65,6 +77,14 @@ my_widgets = [
             threshold = 65,
             metric = True,
             ),
+        widget.NvidiaSensors(
+            **widget_defaults,
+            format = ' {temp} °C',
+            background = colors[0],
+            foreground = colors[22],
+            threeshold = 65,
+            foreground_alert = colors[24]
+            ),
         widget.Battery(
             **widget_defaults,
             format = '{char} 󰁹:{percent: 2.0%}',
@@ -96,15 +116,18 @@ my_widgets = [
             format = '%d/%m/%Y %H:%M:%S',
             background = colors[0],
             foreground = colors[14],
-            ),
+            )] + [
         widget.Backlight(
-            **widget_defaults,
-            format = '󰃝 {percent:2.0}%',
-            backlight_name = 'intel_backlight',
-            backlight_file = 'brightness',
-            background = colors[0],
-            foreground = colors[20],
-            ),
+            **brightness_defaults,
+            backlight_name = 'nvidia_wmi_ec_backlight'
+            )
+        if os.system(process) == 0
+        else
+        widget.Backlight(
+            **brightness_defaults,
+            backlight_name= 'intel_backlight'
+            )
+            ] + [
         widget.Volume(
             **widget_defaults,
             channel = 'Master',
