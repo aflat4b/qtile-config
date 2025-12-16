@@ -100,7 +100,7 @@ my_widgets = [
             ),
         widget.Net(
             **widget_defaults,
-            format = '  {interface}: {down:6.2f}  {up:6.2f}',
+            format = '  {interface}: {down:6.2f}{down_suffix}  {up:6.2f}{up_suffix}',
             background = colors[0],
             foreground = colors[12],
             interface = 'wlp0s20f3',
