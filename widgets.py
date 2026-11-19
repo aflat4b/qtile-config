@@ -79,6 +79,7 @@ my_widgets = [
             ),
         widget.NvidiaSensors(
             **widget_defaults,
+            gpu_bus_id = '01:00.0',
             format = ' {temp} °C',
             background = colors[0],
             foreground = colors[22],
