@@ -22,7 +22,7 @@ group_layouts = ["monadtall", "monadtall", "monadtall", "monadtall", "monadtall"
 # Defining matches for each group
 
 matches_matrix = [[Match(wm_class = re.compile(r"^(Brave\-browser|brave\-broswer|qbittorrent|qBittorrent)$"))],
-                  [Match(wm_class = re.compile(r"^(jetbrains\-idea)$"))],
+                  [Match(wm_class = re.compile(r"^(jetbrains\-idea)|code-oss$"))],
                   [Match(wm_class = re.compile(r"^(Alacritty|Kitty|xterm|st)$"))],
                   [Match(wm_class = re.compile(r"^(deadbeef)$"))],
                   [Match(wm_class = re.compile(r"^(mpv|vlc)$"))],
